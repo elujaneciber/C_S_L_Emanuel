@@ -295,7 +295,7 @@ public class Menu extends javax.swing.JFrame {
             }
         }
         jLabelWinner.setText("The winning team is:" + teamNameWinner);
-        JOptionPane.showMessageDialog(this, "The winning team is:" + teamNameWinner, "Result of the match", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "The winning team is: " + teamNameWinner, "Result of the match", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jSimulateMatch
 
     private void jDeleteTeam(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteTeam
