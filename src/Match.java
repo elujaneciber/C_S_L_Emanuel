@@ -31,8 +31,8 @@ public class Match {
 
     public void playMatch(JTable jPositionTable, int rowOne, int rowTwo) {
         Random random = new Random();
-        teamOneGoals = random.nextInt(5);
-        teamTwoGoals = random.nextInt(5);
+        teamOneGoals = random.nextInt(4);
+        teamTwoGoals = random.nextInt(4);
 
         // Actualización de estadísticas de equipos
         teamOne.setGamesPlayed(teamOne.getGamesPlayed() + 1);
@@ -65,13 +65,6 @@ public class Match {
         
                   
         printValues(jPositionTable, teamOne, teamTwo, rowOne, rowTwo);
-        
-        // Este seria el ordenamiento
-        //jPositionTable.setAutoCreateRowSorter(true);
-        //DefaultRowSorter sorter = ((DefaultRowSorter) jPositionTable.getRowSorter());
-        //ArrayList<RowSorter.SortKey> sortKeys = new ArrayList<>();
-        //sortKeys.add(new RowSorter.SortKey(1, SortOrder.DESCENDING));
-        //sorter.setSortKeys(sortKeys);
     }
 
     private void printValues(JTable jPositionTable, Team teamOne, Team teamTwo, int rowOne, int rowTwo) {
@@ -89,5 +82,11 @@ public class Match {
         jPositionTable.setValueAt(teamTwo.getGoalsScored(), rowTwo, 5);
         jPositionTable.setValueAt(teamTwo.getGoalsConceded(), rowTwo, 6);
     
+        // Ordenamiento de las filas de la tabla segun los puntos
+        jPositionTable.setAutoCreateRowSorter(true);
+        DefaultRowSorter sorter = ((DefaultRowSorter) jPositionTable.getRowSorter());
+        ArrayList<RowSorter.SortKey> sortKeys = new ArrayList<>();
+        sortKeys.add(new RowSorter.SortKey(1, SortOrder.DESCENDING));
+        sorter.setSortKeys(sortKeys);
     } 
 }

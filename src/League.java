@@ -77,6 +77,12 @@ public class League {
                     break;
                 }
             }
-        }
+        }   
+    }
+
+       public void reset() {
+           lstTeams.clear();
+           lstMatches.clear();           
     }
 }
+
