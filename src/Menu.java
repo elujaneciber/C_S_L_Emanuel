@@ -82,11 +82,6 @@ public class Menu extends javax.swing.JFrame {
                 textFieldTeamNameMousePressed(evt);
             }
         });
-        textFieldTeamName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldTeamNameActionPerformed(evt);
-            }
-        });
         jPanel1.add(textFieldTeamName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, 280, -1));
 
         jAddTeam.setBackground(new java.awt.Color(153, 255, 153));
@@ -143,7 +138,7 @@ public class Menu extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false
@@ -210,8 +205,8 @@ public class Menu extends javax.swing.JFrame {
 
         jLabelWinner.setFont(new java.awt.Font("PT Serif", 1, 30)); // NOI18N
         jLabelWinner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelWinner.setIcon(new javax.swing.ImageIcon("/Users/nn/Desktop/Tecnicas de Prog/Repo GitHub/Colombian_Soccer_League/Images/icons8-hombre-ganador-48.png")); // NOI18N
-        jLabelWinner.setText("Team Winner");
+        jLabelWinner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/icons8-hombre-ganador-48.png"))); // NOI18N
+        jLabelWinner.setText("Team Winner:");
         jPanel1.add(jLabelWinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, 800, -1));
 
         jLabelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/colombian-national-soccer-team.jpg"))); // NOI18N
@@ -247,7 +242,7 @@ public class Menu extends javax.swing.JFrame {
         teamName = teamName.toUpperCase();
 
         if (listPreviewTeams.contains(teamName)) {
-            JOptionPane.showMessageDialog(this, "El equipo ya existe. Intente con otro nombre", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "The equipment already exists. Try another team name.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -259,9 +254,9 @@ public class Menu extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) jPositionTable.getModel();
             model.addRow(new Object[]{team.getNameTeam(), team.getPointsTotal(), team.getGamesPlayed(), team.getGamesWon(), team.getGamesLost(), team.getGoalsScored(), team.getGoalsConceded()});
 
-            JOptionPane.showMessageDialog(this, "Equipo agregado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Team name successfully added.", "Success", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(this, "Por favor ingrese el nombre del equipo.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter the team name.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jAddTeam
 
@@ -270,7 +265,7 @@ public class Menu extends javax.swing.JFrame {
         int numTeams = lstTeams.size();
 
         if (numTeams < 2) {
-            JOptionPane.showMessageDialog(this, "Se necesitan al menos dos equipos para hacer la simulacion.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "At least two teams are needed to do the simulation.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -279,30 +274,28 @@ public class Menu extends javax.swing.JFrame {
             for (int x = 0; x < lstTeams.size(); x++) {
                 Team teamTwo = lstTeams.get(x);
                 if (teamTwo != teamOne) {
-                    //System.out.printf("%s vs %s. %n", teamOne.getNameTeam(), teamTwo.getNameTeam());
                     Match match = new Match(teamOne, teamTwo);
                     match.playMatch(jPositionTable, i, x);
-                    
                 }
             }
         }
 
-        //Muestra equipo ganador de la liga
-        int winner = Integer.MIN_VALUE; 
+        //Show league winning team
+        int winner = Integer.MIN_VALUE;
         String teamNameWinner = null;
 
         DefaultTableModel model = (DefaultTableModel) jPositionTable.getModel();
 
         for (int i = 0; i < model.getRowCount(); i++) {
-            int points = (int) model.getValueAt(i, 1); 
+            int points = (int) model.getValueAt(i, 1);
 
             if (points > winner) {
-                winner = points; 
-                teamNameWinner = (String) model.getValueAt(i, 0); 
+                winner = points;
+                teamNameWinner = (String) model.getValueAt(i, 0);
             }
         }
-        jLabelWinner.setText("El equipo ganador es: " + teamNameWinner);
-        JOptionPane.showMessageDialog(this, "El ganador equipo ganador es: " + teamNameWinner, "Resultado del partido", JOptionPane.INFORMATION_MESSAGE); 
+        jLabelWinner.setText("The winning team is:" + teamNameWinner);
+        JOptionPane.showMessageDialog(this, "The winning team is:" + teamNameWinner, "Result of the match", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jSimulateMatch
 
     private void jDeleteTeam(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteTeam
@@ -323,9 +316,9 @@ public class Menu extends javax.swing.JFrame {
                 }
             }
 
-            JOptionPane.showMessageDialog(this, "Equipo eliminado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Team eliminated successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(null, "Por favor seleccione un equipo para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please select a device from the list to delete it.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jDeleteTeam
 
@@ -334,18 +327,13 @@ public class Menu extends javax.swing.JFrame {
         listPreviewTeams.clear();
         DefaultTableModel model = (DefaultTableModel) jPositionTable.getModel();
         model.setRowCount(0);
+        jLabelWinner.setText("Team Winner");
     }//GEN-LAST:event_jResetActionPerformed
 
     private void textFieldTeamNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldTeamNameMousePressed
         textFieldTeamName.setText ("");
-        textFieldTeamName.setForeground(Color.black);
-        
-                
+        textFieldTeamName.setForeground(Color.black);       
     }//GEN-LAST:event_textFieldTeamNameMousePressed
-
-    private void textFieldTeamNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldTeamNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldTeamNameActionPerformed
 
     /**
      * @param args the command line arguments

@@ -97,7 +97,6 @@
           </Properties>
           <Events>
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="textFieldTeamNameMousePressed"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textFieldTeamNameActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -226,13 +225,13 @@
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="7" rowCount="0">
-                    <Column editable="false" title="Team Name" type="java.lang.Object"/>
+                    <Column editable="false" title="Team Name" type="java.lang.String"/>
                     <Column editable="false" title="Points Total" type="java.lang.Integer"/>
-                    <Column editable="false" title="Games Played" type="java.lang.Object"/>
-                    <Column editable="false" title="Games Won" type="java.lang.Object"/>
-                    <Column editable="false" title="Games Lost" type="java.lang.Object"/>
-                    <Column editable="false" title="Goals Scored" type="java.lang.Object"/>
-                    <Column editable="false" title="Goals Conceded" type="java.lang.Object"/>
+                    <Column editable="false" title="Games Played" type="java.lang.Integer"/>
+                    <Column editable="false" title="Games Won" type="java.lang.Integer"/>
+                    <Column editable="false" title="Games Lost" type="java.lang.Integer"/>
+                    <Column editable="false" title="Goals Scored" type="java.lang.Integer"/>
+                    <Column editable="false" title="Goals Conceded" type="java.lang.Integer"/>
                   </Table>
                 </Property>
                 <Property name="autoscrolls" type="boolean" value="false"/>
@@ -363,9 +362,9 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/nn/Desktop/Tecnicas de Prog/Repo GitHub/Colombian_Soccer_League/Images/icons8-hombre-ganador-48.png"/>
+              <Image iconType="3" name="/com/images/icons8-hombre-ganador-48.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Team Winner"/>
+            <Property name="text" type="java.lang.String" value="Team Winner:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

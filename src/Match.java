@@ -34,36 +34,35 @@ public class Match {
         teamOneGoals = random.nextInt(4);
         teamTwoGoals = random.nextInt(4);
 
-        // Actualización de estadísticas de equipos
+        // Update of equipment statistics
         teamOne.setGamesPlayed(teamOne.getGamesPlayed() + 1);
         teamTwo.setGamesPlayed(teamTwo.getGamesPlayed() + 1);
 
         teamOne.setGoalsScored(teamOne.getGoalsScored() + teamOneGoals);
         teamOne.setGoalsConceded(teamOne.getGoalsConceded() + teamTwoGoals);
-        teamOne.setPointsTotal(teamOne.getPointsTotal() + teamOneGoals); // //Suma los goles anotados a los puntos totales
-        teamOne.setPointsTotal(teamOne.getPointsTotal() - teamTwoGoals); //Resta los goles concedidos a los puntos totales
-        
+        teamOne.setPointsTotal(teamOne.getPointsTotal() + teamOneGoals); //Sum the goals scored to total points
+        teamOne.setPointsTotal(teamOne.getPointsTotal() - teamTwoGoals); //Subtracts goals conceded from total points
+
         teamTwo.setGoalsScored(teamTwo.getGoalsScored() + teamTwoGoals);
         teamTwo.setGoalsConceded(teamTwo.getGoalsConceded() + teamOneGoals);
-        teamTwo.setPointsTotal(teamTwo.getPointsTotal() + teamTwoGoals); //Suma los goles anotados a los puntos totales
-        teamTwo.setPointsTotal(teamTwo.getPointsTotal() - teamOneGoals); //Resta los goles concedidos a los puntos totales
+        teamTwo.setPointsTotal(teamTwo.getPointsTotal() + teamTwoGoals); //Sum the goals scored to total points
+        teamTwo.setPointsTotal(teamTwo.getPointsTotal() - teamOneGoals); //Subtracts goals conceded from total points
 
-        // Actualización de puntos por el bonus del partido ganado, perdido o empatado
+        // Updating of points for the bonus of the won, lost or tied game
         if (teamOneGoals > teamTwoGoals) {
-            teamOne.setPointsTotal(teamOne.getPointsTotal() + 3); // Cuando el equipo 1 gana
+            teamOne.setPointsTotal(teamOne.getPointsTotal() + 3); // When team 1 wins
             teamOne.setGamesWon(teamOne.getGamesWon() + 1);
             teamTwo.setGamesLost(teamTwo.getGamesLost() + 1);
         } else if (teamOneGoals < teamTwoGoals) {
-            teamTwo.setPointsTotal(teamTwo.getPointsTotal() + 3); // Cuando el equipo 2 gana
+            teamTwo.setPointsTotal(teamTwo.getPointsTotal() + 3); // When team 2 wins
             teamTwo.setGamesWon(teamTwo.getGamesWon() + 1);
             teamOne.setGamesLost(teamOne.getGamesLost() + 1);
         } else {
-            // En caso de empate
+            // In the event of a tie
             teamOne.setPointsTotal(teamOne.getPointsTotal() + 1);
             teamTwo.setPointsTotal(teamTwo.getPointsTotal() + 1);
         }
-        
-                  
+
         printValues(jPositionTable, teamOne, teamTwo, rowOne, rowTwo);
     }
 
@@ -81,12 +80,12 @@ public class Match {
         jPositionTable.setValueAt(teamTwo.getGamesLost(), rowTwo, 4);
         jPositionTable.setValueAt(teamTwo.getGoalsScored(), rowTwo, 5);
         jPositionTable.setValueAt(teamTwo.getGoalsConceded(), rowTwo, 6);
-    
-        // Ordenamiento de las filas de la tabla segun los puntos
+
+        // Ordering of the rows of the table according to the total points of each team
         jPositionTable.setAutoCreateRowSorter(true);
         DefaultRowSorter sorter = ((DefaultRowSorter) jPositionTable.getRowSorter());
         ArrayList<RowSorter.SortKey> sortKeys = new ArrayList<>();
         sortKeys.add(new RowSorter.SortKey(1, SortOrder.DESCENDING));
         sorter.setSortKeys(sortKeys);
-    } 
+    }
 }
