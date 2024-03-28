@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,67 +36,103 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         textFieldTeamName = new javax.swing.JTextField();
         jAddTeam = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListTeams = new javax.swing.JList<>();
-        jSimulateMatch = new javax.swing.JButton();
         jDeleteTeam = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPositionTable = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        jLabelWinner = new javax.swing.JLabel();
         jReset = new javax.swing.JButton();
+        jLabelTablePosition = new javax.swing.JLabel();
+        jSimulateMatch = new javax.swing.JButton();
+        jLabelWinner = new javax.swing.JLabel();
+        jLabelImage = new javax.swing.JLabel();
+        jLabelEnterName = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel1.setText("Table of positions");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 3, 14)); // NOI18N
-        jLabel2.setText("Team Name:");
+        jLabel3.setFont(new java.awt.Font("DIN Condensed", 1, 48)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("COLOMBIAN SOCCER LEAGUE");
+        jLabel3.setToolTipText("");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 810, 60));
+
+        jLabel2.setFont(new java.awt.Font("DIN Alternate", 0, 16)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Registered teams");
         jLabel2.setToolTipText("");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 90, 190, -1));
 
+        textFieldTeamName.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
+        textFieldTeamName.setForeground(new java.awt.Color(204, 204, 204));
         textFieldTeamName.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        textFieldTeamName.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        textFieldTeamName.setText("Enter your team name");
+        textFieldTeamName.setToolTipText("");
+        textFieldTeamName.setBorder(null);
+        textFieldTeamName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                textFieldTeamNameMousePressed(evt);
+            }
+        });
+        textFieldTeamName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldTeamNameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(textFieldTeamName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, 280, -1));
 
-        jAddTeam.setBackground(new java.awt.Color(51, 255, 0));
+        jAddTeam.setBackground(new java.awt.Color(153, 255, 153));
         jAddTeam.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jAddTeam.setText("Add Team");
-        jAddTeam.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jAddTeam.setBorderPainted(false);
+        jAddTeam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jAddTeam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAddTeam(evt);
             }
         });
+        jPanel1.add(jAddTeam, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 180, -1, -1));
 
-        jListTeams.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jListTeams.setBorder(null);
+        jListTeams.setFont(new java.awt.Font("Helvetica Neue", 0, 16)); // NOI18N
         jListTeams.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        jListTeams.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jListTeams.setToolTipText("");
         jScrollPane1.setViewportView(jListTeams);
         jListTeams.getAccessibleContext().setAccessibleDescription("");
 
-        jSimulateMatch.setText("Simulate Match");
-        jSimulateMatch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jSimulateMatch(evt);
-            }
-        });
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 120, 350, 120));
 
         jDeleteTeam.setBackground(new java.awt.Color(255, 102, 102));
         jDeleteTeam.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jDeleteTeam.setText("Delete Team");
+        jDeleteTeam.setBorderPainted(false);
+        jDeleteTeam.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jDeleteTeam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDeleteTeam(evt);
             }
         });
+        jPanel1.add(jDeleteTeam, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 250, -1, -1));
+
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setAlignmentX(1.0F);
+        jSeparator1.setAlignmentY(1.0F);
+        jSeparator1.setAutoscrolls(true);
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 280, 20));
 
         jPositionTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -105,9 +142,16 @@ public class Menu extends javax.swing.JFrame {
                 "Team Name", "Points Total", "Games Played", "Games Won", "Games Lost", "Goals Scored", "Goals Conceded"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -117,7 +161,10 @@ public class Menu extends javax.swing.JFrame {
         jPositionTable.setEnabled(false);
         jPositionTable.setFocusTraversalKeysEnabled(false);
         jPositionTable.setFocusable(false);
+        jPositionTable.setGridColor(new java.awt.Color(255, 255, 255));
+        jPositionTable.setOpaque(false);
         jPositionTable.setRequestFocusEnabled(false);
+        jPositionTable.setSelectionBackground(new java.awt.Color(255, 255, 255));
         jPositionTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(jPositionTable);
         if (jPositionTable.getColumnModel().getColumnCount() > 0) {
@@ -130,88 +177,66 @@ public class Menu extends javax.swing.JFrame {
             jPositionTable.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
-        jLabel3.setText("Colombian Soccer League");
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, 750, 139));
 
-        jLabelWinner.setFont(new java.awt.Font("PT Serif", 1, 24)); // NOI18N
-        jLabelWinner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelWinner.setIcon(new javax.swing.ImageIcon("/Users/nn/Desktop/Tecnicas de Prog/Repo GitHub/Colombian_Soccer_League/Images/icons8-hombre-ganador-48.png")); // NOI18N
-        jLabelWinner.setText("Team Winner");
-
+        jReset.setBackground(new java.awt.Color(255, 255, 51));
+        jReset.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
         jReset.setText("Reset League");
+        jReset.setBorderPainted(false);
+        jReset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jResetActionPerformed(evt);
             }
         });
+        jPanel1.add(jReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 480, -1, -1));
+
+        jLabelTablePosition.setFont(new java.awt.Font("DIN Condensed", 1, 30)); // NOI18N
+        jLabelTablePosition.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelTablePosition.setText("Results of the matches");
+        jPanel1.add(jLabelTablePosition, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 750, -1));
+
+        jSimulateMatch.setBackground(new java.awt.Color(0, 255, 0));
+        jSimulateMatch.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jSimulateMatch.setText("Simulate Match");
+        jSimulateMatch.setBorderPainted(false);
+        jSimulateMatch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jSimulateMatch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jSimulateMatch(evt);
+            }
+        });
+        jPanel1.add(jSimulateMatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 480, -1, -1));
+
+        jLabelWinner.setFont(new java.awt.Font("PT Serif", 1, 30)); // NOI18N
+        jLabelWinner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelWinner.setIcon(new javax.swing.ImageIcon("/Users/nn/Desktop/Tecnicas de Prog/Repo GitHub/Colombian_Soccer_League/Images/icons8-hombre-ganador-48.png")); // NOI18N
+        jLabelWinner.setText("Team Winner");
+        jPanel1.add(jLabelWinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, 800, -1));
+
+        jLabelImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/colombian-national-soccer-team.jpg"))); // NOI18N
+        jLabelImage.setText("jLabel4");
+        jLabelImage.setOpaque(true);
+        jPanel1.add(jLabelImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 0, 390, 620));
+
+        jLabelEnterName.setFont(new java.awt.Font("DIN Alternate", 1, 16)); // NOI18N
+        jLabelEnterName.setText("Team name");
+        jLabelEnterName.setToolTipText("");
+        jPanel1.add(jLabelEnterName, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 270, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 923, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(361, 361, 361)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(279, 279, 279)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(textFieldTeamName))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jDeleteTeam)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jAddTeam))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(328, 328, 328)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(416, 416, 416)
-                                .addComponent(jSimulateMatch)
-                                .addGap(130, 130, 130)
-                                .addComponent(jReset)))
-                        .addGap(0, 32, Short.MAX_VALUE))
-                    .addComponent(jLabelWinner, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(textFieldTeamName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jDeleteTeam)
-                    .addComponent(jAddTeam))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSimulateMatch)
-                    .addComponent(jReset))
-                .addGap(73, 73, 73)
-                .addComponent(jLabelWinner)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -311,6 +336,17 @@ public class Menu extends javax.swing.JFrame {
         model.setRowCount(0);
     }//GEN-LAST:event_jResetActionPerformed
 
+    private void textFieldTeamNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldTeamNameMousePressed
+        textFieldTeamName.setText ("");
+        textFieldTeamName.setForeground(Color.black);
+        
+                
+    }//GEN-LAST:event_textFieldTeamNameMousePressed
+
+    private void textFieldTeamNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldTeamNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldTeamNameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -347,11 +383,14 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jAddTeam;
     private javax.swing.JButton jDeleteTeam;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelEnterName;
+    private javax.swing.JLabel jLabelImage;
+    private javax.swing.JLabel jLabelTablePosition;
     private javax.swing.JLabel jLabelWinner;
     private javax.swing.JList<String> jListTeams;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTable jPositionTable;
     private javax.swing.JButton jReset;
     private javax.swing.JScrollPane jScrollPane1;

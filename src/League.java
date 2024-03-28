@@ -80,9 +80,9 @@ public class League {
         }   
     }
 
-       public void reset() {
-           lstTeams.clear();
-           lstMatches.clear();           
+    public void reset() {
+        lstTeams.clear();
+        lstMatches.clear();
     }
 }
 
