@@ -47,6 +47,8 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jPositionTable = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
+        jLabelWinner = new javax.swing.JLabel();
+        jReset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,6 +133,18 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel3.setText("Colombian Soccer League");
 
+        jLabelWinner.setFont(new java.awt.Font("PT Serif", 1, 24)); // NOI18N
+        jLabelWinner.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelWinner.setIcon(new javax.swing.ImageIcon("/Users/nn/Desktop/Tecnicas de Prog/Repo GitHub/Colombian_Soccer_League/Images/icons8-hombre-ganador-48.png")); // NOI18N
+        jLabelWinner.setText("Team Winner");
+
+        jReset.setText("Reset League");
+        jReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jResetActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -139,30 +153,36 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 923, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(361, 361, 361)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(279, 279, 279)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(textFieldTeamName))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jDeleteTeam)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jAddTeam))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(328, 328, 328)
-                        .addComponent(jLabel3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(399, 399, 399)
-                        .addComponent(jSimulateMatch)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                                .addGap(20, 20, 20)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 923, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(361, 361, 361)
+                                .addComponent(jLabel1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(279, 279, 279)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(textFieldTeamName))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jDeleteTeam)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jAddTeam))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(328, 328, 328)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(416, 416, 416)
+                                .addComponent(jSimulateMatch)
+                                .addGap(130, 130, 130)
+                                .addComponent(jReset)))
+                        .addGap(0, 32, Short.MAX_VALUE))
+                    .addComponent(jLabelWinner, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,10 +204,14 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jSimulateMatch)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSimulateMatch)
+                    .addComponent(jReset))
+                .addGap(73, 73, 73)
+                .addComponent(jLabelWinner)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         pack();
@@ -233,12 +257,27 @@ public class Menu extends javax.swing.JFrame {
                     //System.out.printf("%s vs %s. %n", teamOne.getNameTeam(), teamTwo.getNameTeam());
                     Match match = new Match(teamOne, teamTwo);
                     match.playMatch(jPositionTable, i, x);
+                    
                 }
             }
         }
 
-        String winner = (String) jPositionTable.getValueAt(0, 0);
-        JOptionPane.showMessageDialog(this, "El ganador equipo ganador es: " + winner, "Resultado del partido", JOptionPane.INFORMATION_MESSAGE);
+        //Muestra equipo ganador de la liga
+        int winner = Integer.MIN_VALUE; 
+        String teamNameWinner = null;
+
+        DefaultTableModel model = (DefaultTableModel) jPositionTable.getModel();
+
+        for (int i = 0; i < model.getRowCount(); i++) {
+            int points = (int) model.getValueAt(i, 1); 
+
+            if (points > winner) {
+                winner = points; 
+                teamNameWinner = (String) model.getValueAt(i, 0); 
+            }
+        }
+        jLabelWinner.setText("El equipo ganador es: " + teamNameWinner);
+        JOptionPane.showMessageDialog(this, "El ganador equipo ganador es: " + teamNameWinner, "Resultado del partido", JOptionPane.INFORMATION_MESSAGE); 
     }//GEN-LAST:event_jSimulateMatch
 
     private void jDeleteTeam(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDeleteTeam
@@ -247,6 +286,8 @@ public class Menu extends javax.swing.JFrame {
         if (selectedIndex != -1) {
             String selectedTeam = listPreviewTeams.getElementAt(selectedIndex);
             listPreviewTeams.removeElementAt(selectedIndex);
+
+            league.deleteTeam(selectedTeam);
 
             DefaultTableModel model = (DefaultTableModel) jPositionTable.getModel();
             for (int i = 0; i < model.getRowCount(); i++) {
@@ -262,6 +303,13 @@ public class Menu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor seleccione un equipo para eliminar.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jDeleteTeam
+
+    private void jResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jResetActionPerformed
+        league.reset();
+        listPreviewTeams.clear();
+        DefaultTableModel model = (DefaultTableModel) jPositionTable.getModel();
+        model.setRowCount(0);
+    }//GEN-LAST:event_jResetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,8 +350,10 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelWinner;
     private javax.swing.JList<String> jListTeams;
     private javax.swing.JTable jPositionTable;
+    private javax.swing.JButton jReset;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
