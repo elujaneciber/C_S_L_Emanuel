@@ -106,7 +106,6 @@ public class Menu extends javax.swing.JFrame {
         jListTeams.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jListTeams.setToolTipText("");
         jScrollPane1.setViewportView(jListTeams);
-        jListTeams.getAccessibleContext().setAccessibleDescription("");
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 120, 350, 120));
 
@@ -294,7 +293,7 @@ public class Menu extends javax.swing.JFrame {
                 teamNameWinner = (String) model.getValueAt(i, 0);
             }
         }
-        jLabelWinner.setText("The winning team is:" + teamNameWinner);
+        jLabelWinner.setText("The winning team is: " + teamNameWinner);
         JOptionPane.showMessageDialog(this, "The winning team is: " + teamNameWinner, "Result of the match", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jSimulateMatch
 
