@@ -245,7 +245,7 @@ public class Menu extends javax.swing.JFrame {
             return;
         }
 
-        if (!teamName.isEmpty()) {
+        if (!teamName.isEmpty() && teamName.matches("^[a-zA-Z0-9]*$")) {
             Team team = new Team(teamName);
             league.addLeagueTeam(team);
             listPreviewTeams.addElement(team.getNameTeam());
@@ -255,7 +255,7 @@ public class Menu extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(this, "Team name successfully added.", "Success", JOptionPane.INFORMATION_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(this, "Please enter the team name.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please enter a valid Team Name.", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jAddTeam
 
